@@ -1,0 +1,82 @@
+import { Layout } from "@/components/layout/Layout";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
+const leadership = [
+  { name: "Alex Johnson", role: "President", initials: "AJ", bio: "Leading NGTSAB's national advocacy efforts and strategic direction." },
+  { name: "Sarah Chen", role: "Vice President", initials: "SC", bio: "Coordinating state-level initiatives and board development programs." },
+  { name: "Marcus Williams", role: "Secretary", initials: "MW", bio: "Managing organizational communications and documentation." },
+  { name: "Emily Rodriguez", role: "Treasurer", initials: "ER", bio: "Overseeing financial operations and grant management." },
+];
+
+const directors = [
+  { name: "Jordan Lee", role: "Director of Legislation", initials: "JL" },
+  { name: "Priya Patel", role: "Director of Communications", initials: "PP" },
+  { name: "David Kim", role: "Director of Outreach", initials: "DK" },
+  { name: "Taylor Martinez", role: "Director of Education", initials: "TM" },
+  { name: "Olivia Thompson", role: "Director of Events", initials: "OT" },
+  { name: "Noah Anderson", role: "Director of Technology", initials: "NA" },
+];
+
+export default function ThePeople() {
+  return (
+    <Layout>
+      <section className="bg-hero-gradient text-primary-foreground py-20">
+        <div className="container">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">The People</h1>
+          <p className="text-xl text-primary-foreground/90 max-w-2xl">
+            Meet the dedicated students leading our organization and driving change in gifted education.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Executive Board</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {leadership.map((person) => (
+              <Card key={person.name} className="shadow-card hover:shadow-hover transition-shadow text-center">
+                <CardHeader>
+                  <Avatar className="h-24 w-24 mx-auto mb-4">
+                    <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
+                      {person.initials}
+                    </AvatarFallback>
+                  </Avatar>
+                  <CardTitle>{person.name}</CardTitle>
+                  <CardDescription className="text-primary font-medium">{person.role}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{person.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Board of Directors</h2>
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {directors.map((person) => (
+              <Card key={person.name} className="shadow-card text-center p-4">
+                <Avatar className="h-16 w-16 mx-auto mb-3">
+                  <AvatarFallback className="bg-secondary text-secondary-foreground">
+                    {person.initials}
+                  </AvatarFallback>
+                </Avatar>
+                <h3 className="font-semibold text-sm">{person.name}</h3>
+                <p className="text-xs text-muted-foreground">{person.role}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted">
+        <div className="container text-center">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Join Our Team</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+            We're always looking for passionate students to join our leadership team. Check out our open positions and apply today.
+          </p>
+        </div>
+      </section>
+    </Layout>
+  );
+}
