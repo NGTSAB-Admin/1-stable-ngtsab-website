@@ -4,10 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Users, BookOpen, Scale, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Index = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
@@ -16,7 +14,7 @@ const Index = () => {
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-3xl space-y-6">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight font-sans">
               Empowering Student Voices in Gifted Education
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl">
@@ -146,12 +144,19 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "New Automatic Enrollment Bill Introduced", date: "Dec 1, 2024", excerpt: "A groundbreaking bill supporting automatic enrollment in gifted programs..." },
-              { title: "Student Board Success in Texas", date: "Nov 28, 2024", excerpt: "The Texas GT Student Board celebrates its first year of advocacy achievements..." },
-              { title: "NGTSAB Annual Conference 2024", date: "Nov 15, 2024", excerpt: "Join us for our annual gathering of student advocates from across the nation..." },
-            ].map((post, i) => (
-              <Card key={i} className="shadow-card hover:shadow-hover transition-shadow">
+            {[{
+            title: "New Automatic Enrollment Bill Introduced",
+            date: "Dec 1, 2024",
+            excerpt: "A groundbreaking bill supporting automatic enrollment in gifted programs..."
+          }, {
+            title: "Student Board Success in Texas",
+            date: "Nov 28, 2024",
+            excerpt: "The Texas GT Student Board celebrates its first year of advocacy achievements..."
+          }, {
+            title: "NGTSAB Annual Conference 2024",
+            date: "Nov 15, 2024",
+            excerpt: "Join us for our annual gathering of student advocates from across the nation..."
+          }].map((post, i) => <Card key={i} className="shadow-card hover:shadow-hover transition-shadow">
                 <CardHeader>
                   <CardDescription>{post.date}</CardDescription>
                   <CardTitle className="text-lg">{post.title}</CardTitle>
@@ -159,13 +164,10 @@ const Index = () => {
                 <CardContent>
                   <p className="text-muted-foreground text-sm">{post.excerpt}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
