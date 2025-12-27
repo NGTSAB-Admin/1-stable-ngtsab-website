@@ -4,7 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MapPin, Mail, ExternalLink } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { MapPin, Mail, ExternalLink, ChevronDown } from "lucide-react";
 
 const leadership = [
   { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction.", slug: "carter-fitzgerald", location: "Texas" },
@@ -173,35 +174,47 @@ export default function ThePeople() {
             connect local students with NGTSAB resources, and help build grassroots support for gifted education initiatives.
           </p>
           
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {allStates.map((state) => {
               const reps = getRepsByState()[state];
               const hasReps = reps && reps.length > 0;
               
               return (
-                <Card key={state} className={`shadow-card ${hasReps ? '' : 'bg-muted/50'}`}>
-                  <CardHeader className="p-3 pb-2">
-                    <CardTitle className="text-sm font-semibold">{state}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    {hasReps ? (
-                      <div className="space-y-1">
-                        {reps.map((rep) => (
-                          <RepCard key={rep.name} rep={rep} />
-                        ))}
+                <Collapsible key={state} defaultOpen={hasReps}>
+                  <Card className="shadow-card overflow-hidden">
+                    <CollapsibleTrigger className="w-full p-3 flex items-center justify-between hover:bg-muted/50 transition-colors">
+                      <span className="text-sm font-semibold">{state}</span>
+                      <div className="flex items-center gap-2">
+                        {hasReps && (
+                          <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                            {reps.length}
+                          </span>
+                        )}
+                        <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
                       </div>
-                    ) : (
-                      <div className="text-center py-2">
-                        <p className="text-xs text-muted-foreground mb-2">No representative yet</p>
-                        <Link to="/apply">
-                          <Button variant="outline" size="sm" className="text-xs h-7">
-                            Apply Now
-                          </Button>
-                        </Link>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <CardContent className="p-3 pt-0">
+                        {hasReps ? (
+                          <div className="space-y-1">
+                            {reps.map((rep) => (
+                              <RepCard key={rep.name} rep={rep} />
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="text-center py-2">
+                            <p className="text-xs text-muted-foreground mb-2">No representative yet</p>
+                            <Link to="/apply">
+                              <Button variant="outline" size="sm" className="text-xs h-7">
+                                Apply Now
+                              </Button>
+                            </Link>
+                          </div>
+                        )}
+                      </CardContent>
+                    </CollapsibleContent>
+                  </Card>
+                </Collapsible>
               );
             })}
           </div>
