@@ -27,11 +27,11 @@ interface StateRep {
 }
 
 const stateRepresentatives: StateRep[] = [
-  { name: "Megan Brook", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "megan.brook@ngtsab.org" },
-  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wensen.fang@ngtsab.org" },
-  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "violet.sandridge@ngtsab.org" },
-  { name: "Ann Mary Thomas", initials: "AT", city: "Cary", state: "North Carolina", bio: "Executive Board Member and North Carolina State Representative. Ann Mary contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas", email: "annmary.thomas@ngtsab.org" },
-  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Executive Board Member and Texas State Representative. Haley contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker", email: "haley.becker@ngtsab.org" },
+  { name: "Megan Brooks", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "mbrook26@asu.edu" },
+  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wfang01@bvsd.org" },
+  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "vjsandridge01@bvsd.org" },
+  { name: "Ann Mary Thomas", initials: "AT", city: "Cary", state: "North Carolina", bio: "Executive Board Member and North Carolina State Representative. Ann Mary contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas", email: "annmary0828@gmail.com" },
+  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Executive Board Member and Texas State Representative. Haley contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker", email: "beckerhaleymarie@gmail.com" },
 ];
 
 const allStates = [
