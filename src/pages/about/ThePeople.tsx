@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { MapPin, Mail, ExternalLink, ChevronDown } from "lucide-react";
 
+import carterPhoto from "@/assets/carter-fitzgerald.jpg";
+import abigailPhoto from "@/assets/abigail-riead.jpg";
+import calebPhoto from "@/assets/caleb-olson.jpg";
+import annMaryPhoto from "@/assets/ann-mary-thomas.jpg";
+import haleyPhoto from "@/assets/haley-becker.jpg";
+
 const leadership = [
-  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Carter leads our national advocacy efforts and strategic direction. He oversees organizational operations and represents NGTSAB at national conferences.", slug: "carter-fitzgerald", location: "Highlands Ranch, CO" },
-  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Abigail coordinates state-level initiatives and board development programs. She manages outreach efforts and supports strategic planning.", slug: "abigail-riead", location: "Highlands Ranch, CO" },
-  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Caleb coordinates state-level initiatives and board development programs. He focuses on building partnerships and expanding our network.", slug: "caleb-olson", location: "Highlands Ranch, CO" },
-  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Ann Mary contributes to organizational strategy and student advocacy initiatives. She serves as North Carolina State Representative.", slug: "ann-mary-thomas", location: "Cary, NC" },
-  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Haley contributes to organizational strategy and student advocacy initiatives. She serves as Texas State Representative.", slug: "haley-becker", location: "Houston, TX" },
+  { name: "Carter FitzGerald", role: "President", initials: "CF", photo: carterPhoto, bio: "Carter leads our national advocacy efforts and strategic direction. He oversees organizational operations and represents NGTSAB at national conferences.", slug: "carter-fitzgerald", location: "Highlands Ranch, CO" },
+  { name: "Abigail Riead", role: "Vice President", initials: "AR", photo: abigailPhoto, bio: "Abigail coordinates state-level initiatives and board development programs. She manages outreach efforts and supports strategic planning.", slug: "abigail-riead", location: "Highlands Ranch, CO" },
+  { name: "Caleb Olson", role: "Vice President", initials: "CO", photo: calebPhoto, bio: "Caleb coordinates state-level initiatives and board development programs. He focuses on building partnerships and expanding our network.", slug: "caleb-olson", location: "Highlands Ranch, CO" },
+  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", photo: annMaryPhoto, bio: "Ann Mary contributes to organizational strategy and student advocacy initiatives. She serves as North Carolina State Representative.", slug: "ann-mary-thomas", location: "Cary, NC" },
+  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", photo: haleyPhoto, bio: "Haley contributes to organizational strategy and student advocacy initiatives. She serves as Texas State Representative.", slug: "haley-becker", location: "Houston, TX" },
 ];
 
 interface StateRep {
@@ -149,6 +155,7 @@ export default function ThePeople() {
                 <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
                   <CardHeader>
                     <Avatar className="h-24 w-24 mx-auto mb-4">
+                      <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
                       <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
                         {person.initials}
                       </AvatarFallback>
