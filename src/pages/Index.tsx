@@ -35,7 +35,7 @@ const Index = () => {
       </section>
 
       {/* Mission Pillars */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-secondary">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Our Mission Pillars</h2>
@@ -92,44 +92,86 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
-      <section className="py-20 bg-hero-gradient text-primary-foreground">
+      {/* Resources Section */}
+      <section className="py-20 bg-background">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="font-serif text-5xl font-bold mb-2">50+</div>
-              <p className="text-primary-foreground/80">States Represented</p>
-            </div>
-            <div>
-              <div className="font-serif text-5xl font-bold mb-2">1000+</div>
-              <p className="text-primary-foreground/80">Student Advocates</p>
-            </div>
-            <div>
-              <div className="font-serif text-5xl font-bold mb-2">25+</div>
-              <p className="text-primary-foreground/80">Active GT Boards</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Resources for Change</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We provide the tools and guidance you need to make a real impact in gifted education.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-card hover:shadow-hover transition-shadow">
+              <CardHeader>
+                <Users className="h-10 w-10 text-primary mb-2" />
+                <CardTitle>For Student Advocates</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription>
+                  Access training materials, advocacy guides, and connect with a nationwide network of student leaders passionate about gifted education.
+                </CardDescription>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/resources/students">
+                    Explore Resources <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="shadow-card hover:shadow-hover transition-shadow">
+              <CardHeader>
+                <Scale className="h-10 w-10 text-primary mb-2" />
+                <CardTitle>Automatic Enrollment</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription>
+                  Learn about automatic enrollment legislation, why it matters for equity, and how you can advocate for it in your state.
+                </CardDescription>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/legislation">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="shadow-card hover:shadow-hover transition-shadow">
+              <CardHeader>
+                <Sparkles className="h-10 w-10 text-primary mb-2" />
+                <CardTitle>Start a GT Board</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription>
+                  Get step-by-step guidance on starting a student advocacy board at your school, district, or state level.
+                </CardDescription>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/resources/start-board">
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Get Involved CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-hero-gradient text-primary-foreground">
         <div className="container">
-          <div className="bg-secondary rounded-lg p-8 md:p-12 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+          <div className="text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
               Ready to Make a Difference?
             </h2>
-            <p className="text-secondary-foreground/80 max-w-2xl mx-auto mb-8">
+            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Whether you're a student, teacher, or advocate, there's a place for you in our movement. Join us in transforming gifted education across America.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link to="/apply">Apply to Join</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
                 <Link to="/resources/start-board">Start a GT Board</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
