@@ -1,13 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { CheckCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle, ExternalLink, Users } from "lucide-react";
 
 const benefits = [
   "Connect with student advocates nationwide",
@@ -18,18 +11,6 @@ const benefits = [
 ];
 
 export default function Apply() {
-  const { toast } = useToast();
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for your interest in NGTSAB. We'll be in touch soon.",
-    });
-  };
-
   return (
     <Layout>
       <section className="bg-hero-gradient text-primary-foreground py-20">
@@ -58,6 +39,20 @@ export default function Apply() {
                 ))}
               </ul>
 
+              <Card className="shadow-card bg-accent/50 border-accent mb-6">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3">
+                    <Users className="h-6 w-6 text-primary mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Now Recruiting State Representatives!</h3>
+                      <p className="text-sm text-muted-foreground">
+                        We are currently looking for passionate students to serve as State Representatives. If you're interested in advocating for gifted education in your state, apply today!
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card className="shadow-card bg-muted">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">Who Can Apply?</h3>
@@ -69,66 +64,38 @@ export default function Apply() {
             </div>
 
             <div>
-              {submitted ? (
-                <Card className="shadow-elegant">
-                  <CardContent className="p-8 text-center">
-                    <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <h3 className="font-serif text-2xl font-bold mb-2">Application Received!</h3>
-                    <p className="text-muted-foreground">
-                      Thank you for applying to NGTSAB. Our team will review your application and get back to you within 1-2 weeks.
+              <Card className="shadow-elegant">
+                <CardContent className="p-6">
+                  <h3 className="font-serif text-xl font-bold mb-4">Application Form</h3>
+                  <div className="w-full overflow-hidden rounded-lg">
+                    <iframe 
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSfRztlgVtpR0k1SLaChapspfn78BzVAgrSuXlCwdrG1JlbVPA/viewform?embedded=true" 
+                      width="100%" 
+                      height="3097" 
+                      frameBorder="0" 
+                      marginHeight={0} 
+                      marginWidth={0}
+                      className="border-0"
+                      title="NGTSAB Application Form"
+                    >
+                      Loading…
+                    </iframe>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border text-center">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Having trouble with the embedded form?
                     </p>
-                  </CardContent>
-                </Card>
-              ) : (
-                <Card className="shadow-elegant">
-                  <CardHeader>
-                    <CardTitle>Application Form</CardTitle>
-                    <CardDescription>Fill out the form below to apply for membership.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="firstName">First Name</Label>
-                          <Input id="firstName" required />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="lastName">Last Name</Label>
-                          <Input id="lastName" required />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="grade">Grade Level</Label>
-                        <Select required>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select grade" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="middle">Middle School (6-8)</SelectItem>
-                            <SelectItem value="high">High School (9-12)</SelectItem>
-                            <SelectItem value="college">College/University</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="state">State</Label>
-                        <Input id="state" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="interest">Why do you want to join NGTSAB?</Label>
-                        <Textarea id="interest" rows={4} required />
-                      </div>
-                      <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                        Submit Application
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              )}
+                    <a 
+                      href="https://forms.gle/9iEzMVjCFdYdHSeg7" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary hover:underline"
+                    >
+                      Open form in a new tab <ExternalLink className="ml-1 h-4 w-4" />
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
