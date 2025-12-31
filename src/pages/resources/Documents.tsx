@@ -1,16 +1,52 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, ExternalLink } from "lucide-react";
+import { FileText, Download, ExternalLink, Presentation } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const documents = [
-  { title: "NGTSAB Bylaws", description: "Official organizational bylaws and governance documents", link: "/resources/documents/bylaws", type: "internal" },
-  { title: "Annual Report 2024", description: "Our yearly impact summary and financial overview", link: "#", type: "download" },
-  { title: "Strategic Plan 2024-2027", description: "Long-term goals and initiatives for the organization", link: "#", type: "download" },
-  { title: "Automatic Enrollment Model Bill", description: "Template legislation for state advocacy efforts", link: "#", type: "download" },
-  { title: "GT Board Starter Kit", description: "Complete guide to starting a student advocacy board", link: "#", type: "download" },
-  { title: "Position Statements", description: "Official NGTSAB positions on key education issues", link: "#", type: "download" },
+  { 
+    title: "NGTSAB Bylaws", 
+    description: "Official organizational bylaws and governance documents", 
+    link: "/resources/documents/bylaws", 
+    type: "internal",
+    icon: FileText
+  },
+  { 
+    title: "GT Board Startup Handbook", 
+    description: "Complete guide to starting a student advocacy board at your school", 
+    link: "https://drive.google.com/file/d/1s72qABghUgF15Hz3RRH0a__0JJ-oRezE/view", 
+    type: "download",
+    icon: FileText
+  },
+  { 
+    title: "Why Gifted Education Matters", 
+    description: "Presentation on the importance of gifted education programs", 
+    link: "https://docs.google.com/presentation/d/1Dd4h_2-fttBw1GEPLqCSuCLCPkix1Mpc/edit?usp=sharing", 
+    type: "external",
+    icon: Presentation
+  },
+  { 
+    title: "GT Programs Across the Country", 
+    description: "Comparison of gifted and talented programs across different states", 
+    link: "https://drive.google.com/file/d/1jErcs4QmzfTJgZziQOgQYjT6dUlA565-/view", 
+    type: "download",
+    icon: FileText
+  },
+  { 
+    title: "Interest Based Learning", 
+    description: "Strategies for implementing interest-based learning in the classroom", 
+    link: "https://docs.google.com/presentation/d/1nct_dEPk5U2Nj8egOIMAL8Eo0OEEYp9y/edit?usp=sharing", 
+    type: "external",
+    icon: Presentation
+  },
+  { 
+    title: "Fostering Creativity in GT Students", 
+    description: "Guide to nurturing creativity in gifted and talented students", 
+    link: "https://drive.google.com/file/d/1hcBEXrUNG7-YHmw3PNlCZeboeFqBHd87/view", 
+    type: "download",
+    icon: FileText
+  },
 ];
 
 export default function Documents() {
@@ -31,7 +67,7 @@ export default function Documents() {
             {documents.map((doc) => (
               <Card key={doc.title} className="shadow-card hover:shadow-hover transition-shadow">
                 <CardHeader>
-                  <FileText className="h-8 w-8 text-primary mb-2" />
+                  <doc.icon className="h-8 w-8 text-primary mb-2" />
                   <CardTitle className="text-lg">{doc.title}</CardTitle>
                   <CardDescription>{doc.description}</CardDescription>
                 </CardHeader>
@@ -43,8 +79,18 @@ export default function Documents() {
                       </Link>
                     </Button>
                   ) : (
-                    <Button variant="outline" size="sm">
-                      <Download className="mr-2 h-4 w-4" /> Download PDF
+                    <Button asChild variant="outline" size="sm">
+                      <a href={doc.link} target="_blank" rel="noopener noreferrer">
+                        {doc.type === "download" ? (
+                          <>
+                            <Download className="mr-2 h-4 w-4" /> Download
+                          </>
+                        ) : (
+                          <>
+                            <ExternalLink className="mr-2 h-4 w-4" /> Open
+                          </>
+                        )}
+                      </a>
                     </Button>
                   )}
                 </CardContent>
