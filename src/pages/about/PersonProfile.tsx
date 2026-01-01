@@ -28,8 +28,8 @@ const people = {
     initials: "AR",
     photo: abigailPhoto,
     location: "Highlands Ranch, Colorado",
-    duties: "Communication and promotion.",
-    biography: "High school Senior.",
+    duties: "Coordinating state-level initiatives, overseeing board development programs, supporting the President in strategic planning, and managing inter-state communication between affiliate boards.",
+    biography: "Based in Colorado, Abby has been instrumental in developing resources for students looking to start their own advocacy boards. Her work focuses on building sustainable structures that empower student voices in gifted education policy discussions at both state and national levels.",
     email: "ariead@ngtsab.org",
   },
   "caleb-olson": {
