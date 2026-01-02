@@ -105,7 +105,7 @@ const posts: Record<string, BlogPost> = {
         
         <p>Gifted education transforms when students speak for themselves. NAGC26 is your opportunity to help shape that transformation.</p>
         
-        <h3>We Encourage ALL Gifted Students to Submit Proposals</h3>
+        <h3 className="my-[10px] text-xl">We Encourage ALL Gifted Students to Submit Proposals</h3>
         
         <p>You don't need years of experience, a polished research study, or a perfect idea. What you do need is:</p>
         <ul>
