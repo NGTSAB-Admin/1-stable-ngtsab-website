@@ -190,26 +190,34 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[{
-            title: "New Automatic Enrollment Bill Introduced",
-            date: "Dec 1, 2024",
-            excerpt: "A groundbreaking bill supporting automatic enrollment in gifted programs..."
-          }, {
-            title: "Student Board Success in Texas",
-            date: "Nov 28, 2024",
-            excerpt: "The Texas GT Student Board celebrates its first year of advocacy achievements..."
-          }, {
-            title: "NGTSAB Annual Conference 2024",
-            date: "Nov 15, 2024",
-            excerpt: "Join us for our annual gathering of student advocates from across the nation..."
-          }].map((post, i) => <Card key={i} className="shadow-card hover:shadow-hover transition-shadow">
+              id: "colorado-update-dec-2025",
+              title: "A December 2025 Update on Colorado's Automatic Enrollment",
+              date: "December 29, 2025",
+              excerpt: "Colorado is currently developing a new statewide automatic enrollment bill, led by Representative Jacque Phillips and created in collaboration with students."
+            }, {
+              id: "nagc26-proposals-open",
+              title: "NAGC26 Proposals are OPEN",
+              date: "December 15, 2025",
+              excerpt: "Proposal submissions are now open for NAGC26, the annual national conference hosted by the National Association for Gifted Children."
+            }, {
+              id: "nagc-student-focus-group",
+              title: "NAGC's New Student Focus Group: A Milestone for Student Voice",
+              date: "December 8, 2025",
+              excerpt: "The National Association for Gifted Children (NAGC) has announced an exciting initiative: a new student focus group designed to better understand the lived experiences of gifted students."
+            }].map((post) => (
+              <Card key={post.id} className="shadow-card hover:shadow-hover transition-shadow">
                 <CardHeader>
                   <CardDescription>{post.date}</CardDescription>
                   <CardTitle className="text-lg">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm">{post.excerpt}</p>
+                  <Link to={`/blog/${post.id}`} className="text-primary hover:underline text-sm mt-2 inline-block">
+                    Read more <ArrowRight className="inline h-3 w-3" />
+                  </Link>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
