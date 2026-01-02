@@ -1,0 +1,9 @@
+/connect-with-us	/contact	301
+/connect	/contact	301
+/handbook	/resources/start-board		301
+/bylaws		/resources/documents/bylaws	301
+/applications	/apply		301
+/applying-for-ngtsab	/blog/recruiting-state-reps	301
+/do-our-worlds-align	/blog/ngtsab-nagc25	301
+/javits		/javits-testimony	301
+/national-gifted-and-talented-student-advocacy-board	/blog/about-ngtsab	301
