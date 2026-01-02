@@ -736,7 +736,7 @@ export default function BlogPost() {
       {/* Content */}
       <section className="py-12">
         <div className="container max-w-4xl">
-          <article className="prose prose-lg max-w-none dark:prose-invert">
+          <article className="prose prose-lg max-w-none dark:prose-invert prose-h3:text-xl prose-h3:my-10">
             {post.content}
           </article>
 
