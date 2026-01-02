@@ -47,7 +47,7 @@ export default function Contact() {
 
               <div className="text-sm text-muted-foreground">
                 <p className="mb-2"><strong>Response Time:</strong></p>
-                <p>We typically respond to inquiries within 2-3 business days.</p>
+                <p>We will respond as soon as possible.</p>
               </div>
             </div>
 
