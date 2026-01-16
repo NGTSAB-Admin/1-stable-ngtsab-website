@@ -36,34 +36,32 @@ export default function Bylaws() {
               <div className="flex flex-wrap gap-3 mb-8">
                 <Button asChild>
                   <a 
-                    href="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/view" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Bylaws
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a 
-                    href="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/view" 
+                    href="/pdf/bylaws.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    Open in New Tab
+                    Preview Bylaws
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a 
+                    href="/pdf/bylaws.pdf" 
+                    download
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download
                   </a>
                 </Button>
               </div>
 
               <div className="border rounded-lg overflow-hidden bg-muted/30">
                 <iframe 
-                  src="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/preview" 
+                  src="/pdf/bylaws.pdf" 
                   width="100%" 
                   height="600"
                   className="w-full"
                   title="NGTSAB Bylaws Document"
-                  allow="autoplay"
                 />
               </div>
             </CardContent>

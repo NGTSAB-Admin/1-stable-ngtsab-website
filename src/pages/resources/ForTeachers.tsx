@@ -47,18 +47,27 @@ export default function ForTeachers() {
                 <div className="flex flex-wrap gap-3 mb-6">
                   <Button asChild>
                     <a 
-                      href="https://docs.google.com/presentation/d/1Dd4h_2-fttBw1GEPLqCSuCLCPkix1Mpc/edit?usp=sharing&ouid=112534150296906157920&rtpof=true&sd=true" 
+                      href="/pdf/why-gifted-education-matters.pptx" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Open Presentation
+                      Preview Presentation
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a 
+                      href="/pdf/why-gifted-education-matters.pptx" 
+                      download
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
                     </a>
                   </Button>
                 </div>
                 <div className="border rounded-lg overflow-hidden bg-muted/30">
                   <iframe 
-                    src="https://docs.google.com/presentation/d/e/2PACX-1vQKRKIpseX1xwdvXUjVxfZ6IapaFmapeXkLpA07p1GenX-VRIrtNs4CPhk0YdYkaQ/embed?start=false&loop=false&delayms=10000" 
+                    src="https://view.officeapps.live.com/op/embed.aspx?src=https://ngtsab.org/pdf/why-gifted-education-matters.pptx" 
                     width="100%" 
                     height="450"
                     className="w-full"
@@ -87,23 +96,31 @@ export default function ForTeachers() {
                 <div className="flex flex-wrap gap-3 mb-6">
                   <Button asChild>
                     <a 
-                      href="https://drive.google.com/file/d/1jErcs4QmzfTJgZziQOgQYjT6dUlA565-/view?usp=sharing" 
+                      href="/pdf/national-gt-comparison.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Preview Document
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a 
+                      href="/pdf/national-gt-comparison.pdf" 
+                      download
+                    >
                       <Download className="mr-2 h-4 w-4" />
-                      Download Document
+                      Download
                     </a>
                   </Button>
                 </div>
                 <div className="border rounded-lg overflow-hidden bg-muted/30">
                   <iframe 
-                    src="https://drive.google.com/file/d/1jErcs4QmzfTJgZziQOgQYjT6dUlA565-/preview" 
+                    src="/pdf/national-gt-comparison.pdf" 
                     width="100%" 
                     height="500"
                     className="w-full"
                     title="GT Programs Comparison Document"
-                    allow="autoplay"
                   />
                 </div>
               </CardContent>
@@ -128,18 +145,27 @@ export default function ForTeachers() {
                 <div className="flex flex-wrap gap-3 mb-6">
                   <Button asChild>
                     <a 
-                      href="https://docs.google.com/presentation/d/1nct_dEPk5U2Nj8egOIMAL8Eo0OEEYp9y/edit?usp=sharing&ouid=112534150296906157920&rtpof=true&sd=true" 
+                      href="/pdf/interest-based-learning.pptx" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Open Presentation
+                      Preview Presentation
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a 
+                      href="/pdf/interest-based-learning.pptx" 
+                      download
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
                     </a>
                   </Button>
                 </div>
                 <div className="border rounded-lg overflow-hidden bg-muted/30">
                   <iframe 
-                    src="https://docs.google.com/presentation/d/e/2PACX-1vTpSeSeV9JZ_Metdoa7Ce2yl0erdHt6ApenUTf3-ZyRSJami0b_V4sljuqgX6pTKA/embed?start=false&loop=false&delayms=10000" 
+                    src="https://view.officeapps.live.com/op/embed.aspx?src=https://ngtsab.org/pdf/interest-based-learning.pptx" 
                     width="100%" 
                     height="450"
                     className="w-full"
@@ -169,23 +195,31 @@ export default function ForTeachers() {
                 <div className="flex flex-wrap gap-3 mb-6">
                   <Button asChild>
                     <a 
-                      href="https://drive.google.com/file/d/1hcBEXrUNG7-YHmw3PNlCZeboeFqBHd87/view?usp=sharing" 
+                      href="/pdf/fostering-creativity-in-gt-students.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Preview Document
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a 
+                      href="/pdf/fostering-creativity-in-gt-students.pdf" 
+                      download
+                    >
                       <Download className="mr-2 h-4 w-4" />
-                      Download Document
+                      Download
                     </a>
                   </Button>
                 </div>
                 <div className="border rounded-lg overflow-hidden bg-muted/30">
                   <iframe 
-                    src="https://drive.google.com/file/d/1hcBEXrUNG7-YHmw3PNlCZeboeFqBHd87/preview" 
+                    src="/pdf/fostering-creativity-in-gt-students.pdf" 
                     width="100%" 
                     height="500"
                     className="w-full"
                     title="Fostering Creativity Document"
-                    allow="autoplay"
                   />
                 </div>
               </CardContent>
