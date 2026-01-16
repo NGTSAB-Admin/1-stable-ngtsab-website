@@ -58,32 +58,30 @@ export default function ForStudents() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Button asChild size="lg">
                 <a 
-                  href="https://drive.google.com/file/d/1s72qABghUgF15Hz3RRH0a__0JJ-oRezE/view?usp=sharing" 
+                  href="/pdf/gt-startup-handbook.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Download className="mr-2 h-4 w-4" /> Download Handbook
+                  <ExternalLink className="mr-2 h-4 w-4" /> Preview Handbook
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <a 
-                  href="https://drive.google.com/file/d/1s72qABghUgF15Hz3RRH0a__0JJ-oRezE/view?usp=sharing" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="/pdf/gt-startup-handbook.pdf" 
+                  download
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" /> Open in Google Drive
+                  <Download className="mr-2 h-4 w-4" /> Download
                 </a>
               </Button>
             </div>
 
             <div className="bg-muted rounded-lg p-4 overflow-hidden">
               <iframe 
-                src="https://drive.google.com/file/d/1s72qABghUgF15Hz3RRH0a__0JJ-oRezE/preview" 
+                src="/pdf/gt-startup-handbook.pdf" 
                 width="100%" 
                 height="600"
                 className="rounded border-0"
                 title="GT Board Startup Handbook"
-                allow="autoplay"
               />
             </div>
           </div>
